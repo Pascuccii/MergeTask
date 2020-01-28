@@ -12,9 +12,7 @@ public class Main {
 
         System.out.println("A" + a);
         System.out.println("B" + b + "\n");
-
         merge(a, b);
-
         System.out.println("A" + a);
         System.out.println("B" + b);
     }
@@ -22,10 +20,8 @@ public class Main {
     public static void merge(ArrayList<Integer> a, ArrayList<Integer> b) {
         int j = 0;
         for (int i = 0; i < a.size() && j < b.size(); )
-            if (a.get(i) >= b.get(j))
-                a.add(i++, b.get(j++));
-            else
-                i++;
+            if (a.get(i) >= b.get(j)) a.add(i++, b.get(j++));
+            else i++;
         a.addAll(b.subList(j, b.size()));
     }
 }
